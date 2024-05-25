@@ -42,7 +42,7 @@ namespace SiliconValley.Integration.Regres
         }
         public async Task<Users?> GetUserById(int? userId)
             {
-                string requestUrl = $"{API_URL}/{userId}"; // Modifica la URL para incluir el ID del usuario
+                string requestUrl = $"{API_URL}/{userId}"; 
                 Users? user = null;
                 using (HttpClient client = new HttpClient())
                 {
@@ -53,7 +53,7 @@ namespace SiliconValley.Integration.Regres
                         {
                             var json = await response.Content.ReadAsStringAsync();
                             var jsonObject = JObject.Parse(json);
-                            user = jsonObject["data"].ToObject<Users>(); // Asumiendo que el objeto JSON representa un solo usuario
+                            user = jsonObject["data"].ToObject<Users>(); 
                         }
                     }
                     catch (HttpRequestException ex)
