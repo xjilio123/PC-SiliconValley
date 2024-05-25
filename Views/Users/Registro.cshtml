@@ -4,48 +4,127 @@
     ViewData["Title"] = "CREAR";
 }
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #9bceff;
+            font-family: Arial, sans-serif;
+        }
 
-<div class="navi"></div>
-<div class="navi"></div>
-<div class="container">
-    <h1 class=" text-center">Registrar Usuario</h1>
-    <hr />
-    <div class="row justify-content-center">
-        <div class="col-md-4">
-            <form asp-action="Registro">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group fw-bold text-uppercase">
-                    <label asp-for="id" class="control-label"></label>
-                    <input asp-for="id" class="form-control" />
-                    
-                </div>
-                <div class="form-group fw-bold text-uppercase">
-                    <label asp-for="email" class="control-label"></label>
-                    <input asp-for="email" class="form-control" />
-                    
-                </div>
-                <div class="form-group fw-bold text-uppercase">
-                    <label asp-for="first_name" class="control-label"></label>
-                    <input asp-for="first_name" class="form-control" />
-                    
-                </div>
-                <div class="form-group fw-bold text-uppercase">
-                    <label asp-for="last_name" class="control-label"></label>
-                    <input asp-for="last_name" class="form-control" />
-                    
-                </div>
-                <div class="form-group fw-bold text-uppercase">
-                    <label asp-for="avatar" class="control-label"></label>
-                    <input asp-for="avatar" class="form-control" />
-                    
-                </div>            
-                <div class="form-group " style="margin-top: 15px; margin-left:150px">
-                    <input type="submit" value="Registrar" class="btn btn-dark " /> 
-                </div>
-            </form>
-            <h4>@ViewData["msj"]</h4>
+        /* Navegación */
+        .navi {
+            height: 50px;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Títulos */
+        .container h1 {
+            text-align: center;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        /* Formularios */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        /* Botón de registrar */
+        .btn-dark {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .btn-dark:hover {
+            background-color: #6aff83;
+        }
+
+        /* Estilo adicional para el formulario */
+        .form-container {
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">REGISTRAR NUEVO USUARIO</h1>
+        <hr />
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <form asp-action="Registro">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group fw-bold text-uppercase">
+                        <label asp-for="id" class="control-label"></label>
+                        <input asp-for="id" class="form-control" />
+                    </div>
+                    <div class="form-group fw-bold text-uppercase">
+                        <label asp-for="email" class="control-label"></label>
+                        <input asp-for="email" class="form-control" />
+                    </div>
+                    <div class="form-group fw-bold text-uppercase">
+                        <label asp-for="first_name" class="control-label"></label>
+                        <input asp-for="first_name" class="form-control" />
+                    </div>
+                    <div class="form-group fw-bold text-uppercase">
+                        <label asp-for="last_name" class="control-label"></label>
+                        <input asp-for="last_name" class="form-control" />
+                    </div>
+                    <div class="form-group fw-bold text-uppercase">
+                        <label asp-for="avatar" class="control-label"></label>
+                        <input asp-for="avatar" class="form-control" />
+                    </div>
+                    <div class="form-group form-container">
+                        <input type="submit" value="Registrar" class="btn btn-dark" />
+                    </div>
+                </form>
+                <h4>@ViewData["msj"]</h4>
+            </div>
         </div>
     </div>
+</body>
+</html>
 
-    
-</div>
