@@ -76,20 +76,6 @@ namespace SiliconValley.Integration.Regres
 
                         HttpResponseMessage response = await client.PostAsync(API_URL, content);
 
-                        if (response.IsSuccessStatusCode)
-                        {
-                            
-                            _logger.LogInformation($"USUARIO CREADO: {response}");
-                            msj="USUARIO CREADOㅤㅤㅤㅤㅤㅤㅤㅤ"+response;
-                        }
-                        else
-                        {
-
-                            string responseContent = await response.Content.ReadAsStringAsync();
-                            _logger.LogError($"Error al crear el usuario: {responseContent}");
-                            msj=$"ERROR:{responseContent}";
-                        }
-                        
                     }
                     catch (HttpRequestException ex)
                     {

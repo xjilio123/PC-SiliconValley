@@ -67,14 +67,15 @@
     <div class="container">
         <h1>LISTA DE USUARIOS REGISTRADOS</h1>
         <div>
-            <table class="table table-hover">
-                <thead>
+            <table class="table table-striped">
+                <thead class="thead-dark">
                     <tr>
+                        <th>Id del usuario</th>
+                        <th>primer nombre</th>
+                        <th>Corre</th>
+                        <th>Apellido</th>
+                        <th>Avatar</th>
                         <th>
-                            @Html.DisplayNameFor(model => model.id)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.email)
                         </th>
                         <th>Acciones</th>
                     </tr>
@@ -83,14 +84,11 @@
                     @foreach (var item in Model)
                     {                
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.id)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.email)
-                            </td>
-                            <td>
-                                <button class="btn btn-primary view-details" data-id="@item.id">Ver Detalles</button>
+                            <td>@Html.DisplayFor(modelItem => item.id)</td>
+                            <td>@Html.DisplayFor(modelItem => item.email)</td>
+                            <td>@Html.DisplayFor(modelItem => item.first_name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.last_name)</td>
+                            <td><img src="@Html.DisplayFor(modelItem => item.avatar)" class="d-block image-fit">
                             </td>
                         </tr>
                     }
@@ -98,16 +96,5 @@
             </table>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var buttons = document.querySelectorAll('.view-details');
-            buttons.forEach(function(button) {
-                button.addEventListener('click', function() {
-                    var userId = this.getAttribute('data-id');
-                    window.location.href = '/Users/Details/' + userId;
-                });
-            });
-        });
-    </script>
 </body>
 </html>
